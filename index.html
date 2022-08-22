@@ -1,115 +1,188 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="이정수 프로필">
-    <meta property="og:description" content="#코딩 #가족 #43 #스파르탄">
-    <meta property="og:image"  content="가족사진2.jpg">
-    <title>정수리와함께라면</title>
+    <title>정수리와 함께라면</title>
+
     <style>
-        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
-        * {
-            font-family: "Pretendard",serif;
+        *{
+            margin: 0;
+            padding: 0;
         }
-        body {
-            background-image: url('시훈세은2.jpg');
+        .hero{
+            height: 100vh;
+            width:100%;
+            background-image: url(가족사진2.jpg);
             background-position: center;
             background-size: cover;
+            position: relative;
+        }    
+        .logo{
+            width: 250px;
+            height: 100px;
+            position: absolute;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+    
+        .logo img{
+            width: 100px;
+        }
+        
+        .sidebar{
+            width:250px;
             height: 100vh;
-          }
-        .pro {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(35px);
-            width: 320px;
-            height: 230px;
-            border-radius: 8px;
-            margin-bottom: 60px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            top: 0;
+            left: 0;
+            background: rgba(255,255,255,0.6);
+            position: absolute;
+        }
+    
+        .text-box{
+            transform: rotate(-90deg);
+            position: absolute;
+            top: 45%;
+            text-align: center;
+        }
+    
+        .text-box h1{
+            font-size: 28px;
+            font-weight: 100;
+        }
+    
+        .text-box h4{
+            margin: 7px 0 10px;
+        } 
+    
+        .line{
+            width:80px;
+            height: 1px;
+            margin: auto;
+            background: #000;
+        }
+    
+        .content{
+            color: #fff;
+            position: absolute;
+            right: 200px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    
+        .content h1{
+            font-size: 100px;
+        }
+    
+        .content p{
+            margin: 10px 0 40px;
+        }
+    
+        .btn{
+            display: flex ;
             align-items: center;
-        }
-        .profile {
-            width: 90px;
-            height: 90px;
-            border-radius: 100%;
-            border: 2px solid black;
-            background-image: url("시훈세은.jpg") ;
-            background-position: CENTER;
-            background-size: COVER;
-            }
-        .main {
-            color : #000000;
-            font-size: 20px;
-            size : 20px;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-        .sub {
-            color : #000000;
-            font-size: 14px;
-            font-weight: 500;
-            size : 14px;
-            margin-top: 0px;
-            margin-bottom: 2px;
-        }
-        .subs {
-            display: flex;
-            flex-direction: row;
             justify-content: center;
-            align-items: center;
-            gap: 13px;
+            width: 170px;
+            padding: 10px 0;
+            background: #fff;
+            color: #000;
+            border-radius: 3px;
+            cursor: pointer;
         }
-        .wrap {
-            width: 300px;
-            margin: 30px auto 0px auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+    
+        .btn img{
+            width: 30px;
+            margin-right: 15px;
         }
-        .bigbutton {
-            width: 320px;
-            height: 60px;
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(35px);
-            margin-bottom: 12px;
-            font-size: 17px;
-            font-weight: bold;
-            color:#000000;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-        }
+
         .source {
-            font-size: 17px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 13px;
+            font-weight: 900;
             color: white;
-            font-weight: 500;
+            height: 1800px;
         }
-        .wrap > a:hover {
-            background-color: #f2f2f2;
+    
+        #backvideo{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            display: none;
+        }
+    
+        @media (min-aspect-ratio: 16/9){
+            #backvideo{
+                width: 100%;
+                height: auto;
+            }
+        }
+    
+        @media (max-aspect-ratio: 16/9){
+            #backvideo{
+                width: auto;
+                height: 100%;
+            }
+        }
     </style>
 </head>
+
 <body>
-    <div class="wrap">
-        <div class="pro">
-            <div class="profile"></div>
-            <h1 class="main">이정수 프로필</h1>
-            <div class="subs">
-                <p class="sub">#시후니아빠</p>
-                <p class="sub">#세은이아빠</p>
-                <p class="sub">#민경이남편</p>
-                <p class="sub">#스파르탄</p>
+    <div class="hero">
+       <video autoplay loop muted plays-inline id="backvideo">
+            <source src="시훈세은.mp4" type="video/mp4">
+       </video>
+
+              <div class="logo">
+            <img src="logo.png">
+        </div>
+        <div class="sidebar">
+            <div class="text-box">
+                <H1><B>시후니네 세으니네</B></H1>
+                <H4>HAPPY LIVING</H4>
+                <div class="line"></div>
             </div>
         </div>
-        <a class="bigbutton"target="_blank" href="http://naver.me/5wmkH7aY">가족 사진</a>
-        <a class="bigbutton"target="_blank" href="https://youtube.com/playlist?list=PLEX2glAccEg22YxQuhc-jRO9bJgimVvaF">매불쇼</a>
-        <p class="source">made by jslee</p>
+        <div class="content">
+            <h1>이정수</h1>
+            <p> 정말 행복한 하루가 되길</p>
+            <div class="btn" id="playbtn">
+                <img src="play.png" id="icon">watch video
+            </div>
+            
+        </div>
+        
+         <div class="source">
+            <h1>made by jslee</h1>
+        </div>
+
     </div>
+
+    
+  
+    <script>
+        var backvideo=document.getElementById('backvideo');
+        var playbtn=document.getElementById('playbtn');
+        var icon=document.getElementById('icon');
+
+            playbtn.onclick=function(){
+                backvideo.style.display="block";
+
+                if(backvideo.paused){
+                    backvideo.play();
+                    icon.src="pause.png";
+                }
+                else{
+                    backvideo.pause();
+                    icon.src="play.png";
+                }
+            }
+
+    </script>
 </body>
+
+
+
 </html>
